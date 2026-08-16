@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovy Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="main-frame">
+        
+        <div class="game-frame">
+            <div class="headerTop">
+            <div class="header " id="header">
+                <img src="svg icons/chevron_left.svg" class="chevron_left">
+                <span class="game-name">Lovy Game</span>
+                <div class="help">
+                    <img src="svg icons/support_agent.svg" alt="">
+                    <img src="svg icons/music_note.svg" class="music" alt="">
+                </div>
+            </div>
+        </div>
+            <div class="container">
+
+                <div class="topBackground"></div>
+                <div class="empty"></div>
+                <div class="wallet-section">
+                    <div class="wallet">
+
+                        <div class="money">
+                            <img src="svg icons/currency_ruppy.svg" alt="">
+                            <span class="money fund">0</span>
+                            <img src="svg icons/refresh.svg" class="refresh">
+                        </div>
+                        <div class="wallet-balance">
+                            <img src="svg icons/wallet.svg" alt=""> 
+                            <span>wallet balance</span>
+                        </div>
+                        <div class="wallet-Btn">
+                            <button class="withdraw">Withdraw</button>
+                            <button class="deposit">Deposit</button>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="notice">
+                    <div class="speaker">
+                        <img src="svg icons/valume.svg" alt="">
+                        <span>Hello users, just play for fun</span>
+                    </div>
+                    <div class="more">
+                        <img src="svg icons/local-_fire.svg" alt="">
+                        <span>more</span>
+                    </div>
+                </div>
+
+                <div class="game-mode">
+                    <div class="win30 mode">
+                        <div><img src="svg icons/schedule.svg" alt=""><br></div>
+                        <div>Win Go <br> 30s</div>
+                    </div>
+                    <div class="win1 mode">
+                        <div><img src="svg icons/schedule.svg" alt=""><br></div>
+                        <div>Win Go <br> 1Min</div>
+                    </div>
+                    <div class="win3 mode">
+                        <div><img src="svg icons/schedule.svg" alt=""><br></div>
+                        <div>Win Go <br> 3Min</div>
+                    </div>
+                    <div class="win5 mode">
+                        <div><img src="svg icons/schedule.svg" alt=""><br></div>
+                        <div>Win Go <br> 5Min</div>
+                    </div>
+                </div>
+
+                <div class="period" id="period">
+                    <div class="left">
+                        <div class="left1">
+                            <img src="svg icons/help.svg" alt="">
+                            <span>How to play</span>
+                        </div>
+                        <div class="left2">
+                            Win Go 30s
+                        </div>
+                        <div class="left3"></div>
+                    </div>
+                    <div class="right">
+                        <div class="right1">time of purchase</div>
+                        <div class="right2">
+                            <div class="t1" id="t3">0</div>
+                            <div class="t2" id="t2">0</div>
+                            <div class="t3">:</div>
+                            <div class="t4" id="t1">0</div>
+                            <div class="t5">0</div>
+                        </div>
+                        <div class="right3">20250130302279</div>
+                    </div>
+                </div>
+
+                <div class="gContainer">
+                    <div class="betContainerTop">
+                    <div class="betContainer" id="betContainer">     
+    
+                        <div class="bet">
+                            <div class="gameType bwColor">
+                                <div class="betLabel flex">Win Go 30s</div>
+                                <div class="betChoose">choose <span class="betChooseType" id="chooseType">Big</span></div>
+                            </div>
+                            <div class="betMoney">
+                                <div class="betMoney1">
+                                    <div>Balance</div>
+                                    <div class="balanceType">
+                                        <div class="balanceType1 bt" onclick="initial(1)">1</div>
+                                        <div class="balanceType10 bt" onclick="initial(10)">10</div>
+                                        <div class="balanceType1100 bt" onclick="initial(100)">100</div>
+                                        <div class="balanceType1000 bt" onclick="initial(1000)">1000</div>
+                                    </div>
+                                </div>
+                                <div class="betMoney2">
+                                    <div>quantity</div>
+                                    <div class="betInput">
+                                        <div class="betNegation bwColor" onclick="incOrDec('-')">-</div>
+                                        <div><input type="text" id="betAmountFinal" maxlength="7" value="1"></div>
+                                        <div class="betPositive bwColor" onclick="incOrDec('+')">+</div>
+                                    </div>
+                                </div>
+                                <div class="betMoney3">
+                                    <div class="bx" onclick="multiply(1)">X1</div>
+                                    <div class="bx" onclick="multiply(5)">X5</div>
+                                    <div class="bx" onclick="multiply(10)">X10</div>
+                                    <div class="bx" onclick="multiply(20)">X20</div>
+                                    <div class="bx" onclick="multiply(50)">X50</div>
+                                    <div class="bx" onclick="multiply(100)">X100</div>
+                                </div>
+                                
+                            </div>
+                            <div class="BetButton">
+                                <div class="betCancel flex" id="cancel">cancel</div>
+                                <div class="totalAmount flex bwColor" id="totalBet">Total amount 
+                                    <img src="svg icons/currency_ruppy.svg" class="betCurrency">
+                                    <span class="BetAmount" id="betAmountRupee">1.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="timerContainer">
+                        <div class="timer">
+                            <div class="timer1">
+                                <div class="green" id="green">green</div>
+                                <div class="purple" id="purple">purple</div>
+                                <div class="red" id="red">red</div>
+                            </div>
+                            <div class="timer2">
+                                <img src="images/numbers.png" alt="">
+                            </div>
+                            <div class="timer3">
+                                <div class="x0">random bet</div>
+                                <div class="x1">X1</div>
+                                <div class="x2">X5</div>
+                                <div class="x3">X10</div>
+                                <div class="x4">X20</div>
+                                <div class="x5">X50</div>
+                                <div class="x6">X100</div>
+                            </div>
+                            <div class="timer4">
+                                <div class="big" id="big">Big</div>
+                                <div class="small" id="small">small</div>
+                            </div>
+                        </div>
+
+                        <div id="startTimer">
+                            <div class="startTimer flex">
+                                <div class="startTimerLeft">
+                                    <div id="startTimeLeft">0</div>
+                                </div>
+                                <div class="startTimerRight">
+                                    <div id="startTimeRight">5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="history">
+                    <div class="gameRecord tren">Game Record</div>
+                    <div class="chart tren">Chart tren</div>
+                    <div class="myRecord tren">My Record</div>
+                </div>
+
+                <div class="gameHistory">
+                    <div class="top grid-container">
+                        <div class="periodhistory flex">Period</div>
+                        <div class="number flex">Number</div>
+                        <div class="Size flex">Size</div>
+                        <div class="color flex">Color</div>
+                    </div>
+                    <div class="row1 grid-container">
+                        <div class="periodDiv flex"></div>
+                        <div class="numberDiv flex bold">5</div>
+                        <div class="bigSmall flex"></div>
+                        <div class="colorDiv flex">
+                            <div class="colorDiv2"></div>
+                            <div class="colorDiv1"></div>
+                        </div>
+                    </div>
+                    <div class="row2 grid-container">
+                        <div class="periodDiv flex"></div>
+                        <div class="numberDiv flex bold">5</div>
+                        <div class="bigSmall flex"></div>
+                        <div class="colorDiv flex">
+                            <div class="colorDiv1"></div>
+                            <div class="colorDiv2"></div>
+                        </div>
+                    </div>
+                    <div class="row3 grid-container">
+                        <div class="periodDiv flex"></div>
+                        <div class="numberDiv flex bold">5</div>
+                        <div class="bigSmall flex"></div>
+                        <div class="colorDiv flex">
+                            <div class="colorDiv1"></div>
+                            <div class="colorDiv2"></div>
+                        </div>
+                    </div>
+                    <div class="row4 grid-container">
+                        <div class="periodDiv flex"></div>
+                        <div class="numberDiv flex bold">5</div>
+                        <div class="bigSmall flex"></div>
+                        <div class="colorDiv flex">
+                            <div class="colorDiv1"></div>
+                            <div class="colorDiv2"></div>
+                        </div>
+                    </div>
+                    <div class="row5 grid-container">
+                        <div class="periodDiv flex"></div>
+                        <div class="numberDiv flex bold">5</div>
+                        <div class="bigSmall flex"></div>
+                        <div class="colorDiv flex">
+                            <div class="colorDiv1"></div>
+                            <div class="colorDiv2"></div>
+                        </div>
+                    </div>
+                    <div class="row6 grid-container">
+                        <div class="periodDiv flex"></div>
+                        <div class="numberDiv flex bold">5</div>
+                        <div class="bigSmall flex"></div>
+                        <div class="colorDiv flex">
+                            <div class="colorDiv1"></div>
+                            <div class="colorDiv2"></div>
+                        </div>
+                    </div>
+                    <div class="row7 grid-container">
+                        <div class="periodDiv flex"></div>
+                        <div class="numberDiv flex bold">5</div>
+                        <div class="bigSmall flex"></div>
+                        <div class="colorDiv flex">
+                            <div class="colorDiv1"></div>
+                            <div class="colorDiv2"></div>
+                        </div>
+                    </div>
+                    <div class="row8 grid-container">
+                        <div class="periodDiv flex"></div>
+                        <div class="numberDiv flex bold">5</div>
+                        <div class="bigSmall flex"></div>
+                        <div class="colorDiv flex">
+                            <div class="colorDiv1"></div>
+                            <div class="colorDiv2"></div>
+                        </div>
+                    </div>
+                    <div class="row9 grid-container">
+                        <div class="periodDiv flex"></div>
+                        <div class="numberDiv flex bold">5</div>
+                        <div class="bigSmall flex"></div>
+                        <div class="colorDiv flex">
+                            <div class="colorDiv1"></div>
+                            <div class="colorDiv2"></div>
+                        </div>
+                    </div>
+                    <div class="row10 grid-container">
+                        <div class="periodDiv flex"></div>
+                        <div class="numberDiv flex bold">5</div>
+                        <div class="bigSmall flex"></div>
+                        <div class="colorDiv flex">
+                            <div class="colorDiv1"></div>
+                            <div class="colorDiv2"></div>
+                        </div>
+                    </div>
+                    <div class="last flex">
+                        <div class="leftAiro">
+                            <img src="svg icons/chevron_left.svg" alt="">
+                        </div>
+                        <div class="page">
+                            <span class="flex">1/1</span>
+                        </div>
+                        <div class="rightAiro">
+                            <img src="svg icons/airo-farword.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="betSucceed">
+                    <div class="betSucceed">
+                        <div>Bet Succeed !</div>
+                    </div>
+                </div>
+
+                <div id="insufficientBalance">
+                    <div class="betSucceed">
+                        <div>Insufficent Balance !</div>
+                    </div>
+                </div>
+
+                <div id="winLoose">
+                    <div class="youwin">
+                        <div id="youWin" class="flex">
+                            <!-- <img src="images/WinImage.png" alt=""> -->
+                            <div class="resultDiv"></div>
+                            <div class="resultDiv" id="congrats"></div>
+                            <div class="resultDiv" id="winAmountDisplay">
+                                
+                            </div>
+                            <div class="resultDiv"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
