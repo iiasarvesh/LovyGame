@@ -615,7 +615,7 @@ function displayWin(win, num){
 
 function displayLoss(win){
     winloose.style.display = "block";
-    youLoose.innerHTML = "<span class='win-text'>Sorry <br/> You Loose !</span>"
+    youLoose.innerHTML = "<span class='win-text'>Sorry <br/> You Lose !</span>"
     youWin.innerHTML = "<h5 class='win-amount'>Amount</h5>"+"<span class='amount-value'>" + betAmount + "</span>";
     setTimeout(()=>{
         winloose.style.display = "none";
